@@ -1,7 +1,7 @@
 package com.jgcb.rickandmorty.domain.usecase
 
 import androidx.lifecycle.LiveData
-import com.jgcb.rickandmorty.data.model.Character
+import com.jgcb.rickandmorty.domain.model.Character
 import com.jgcb.rickandmorty.data.repository.CharactersRepositoryImpl
 import com.jgcb.rickandmorty.domain.repository.CharactersRepository
 import com.jgcb.rickandmorty.utils.Resource
@@ -13,8 +13,6 @@ import org.junit.After
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
-
-import org.junit.Assert.*
 
 class GetCharacterForIdUseCaseTest {
 

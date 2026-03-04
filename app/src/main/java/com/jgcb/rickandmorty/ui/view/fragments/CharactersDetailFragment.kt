@@ -9,7 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
-import com.jgcb.rickandmorty.data.model.Character
+import com.jgcb.rickandmorty.domain.model.Character
 import com.jgcb.rickandmorty.databinding.CharacterDetailFragmentBinding
 import com.jgcb.rickandmorty.ui.viewmodels.CharactersDetailViewModel
 import com.jgcb.rickandmorty.utils.ContentConstants

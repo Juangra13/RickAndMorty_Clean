@@ -1,12 +1,11 @@
 package com.jgcb.rickandmorty.domain.repository
 
-import androidx.lifecycle.LiveData
-import com.jgcb.rickandmorty.data.model.Character
-import com.jgcb.rickandmorty.utils.Resource
+import com.jgcb.rickandmorty.domain.model.Character
+import kotlinx.coroutines.flow.Flow
 
 interface CharactersRepository {
 
-    fun getCharacters(): LiveData<Resource<List<Character>>>
+    fun getCharacters(): Flow<List<Character>>
 
-    fun getCharacter(id: Int): LiveData<Resource<Character>>
+    fun getCharacter(id: Int): Flow<Character>
 }

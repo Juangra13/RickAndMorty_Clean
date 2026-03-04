@@ -7,6 +7,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("com.google.devtools.ksp") version "2.1.0-1.0.29"
     id("com.google.dagger.hilt.android")
+    kotlin("plugin.serialization") version "1.9.22"
     id("org.jetbrains.kotlin.plugin.compose")
 }
 
@@ -50,6 +51,10 @@ kotlin {
 }
 
 dependencies {
+
+    val kotlinSerialization = "1.6.2"
+    val okHttp = "4.12.0"
+
     implementation("androidx.core:core-ktx:1.15.0")
     implementation("androidx.appcompat:appcompat:1.7.0")
     implementation("com.google.android.material:material:1.12.0")
@@ -62,6 +67,7 @@ dependencies {
     implementation("androidx.compose.runtime:runtime:1.7.6")
     implementation("androidx.activity:activity-compose:1.9.3")
     implementation("androidx.lifecycle:lifecycle-runtime-compose:2.8.7")
+    implementation("androidx.navigation:navigation-compose:2.7.7")
 
     // Activity
     implementation("androidx.activity:activity-ktx:1.9.3")
@@ -89,6 +95,11 @@ dependencies {
     implementation("androidx.room:room-runtime:2.6.1")
     implementation("androidx.room:room-ktx:2.6.1")
     ksp("androidx.room:room-compiler:2.6.1")
+    // Kotlin Serialization
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:${kotlinSerialization}")
+    // okHttp
+    implementation("com.squareup.okhttp3:okhttp:${okHttp}")
+    implementation("com.squareup.okhttp3:logging-interceptor:${okHttp}")
 
     testImplementation("junit:junit:4.13.2")
     testImplementation("io.mockk:mockk:1.13.13")

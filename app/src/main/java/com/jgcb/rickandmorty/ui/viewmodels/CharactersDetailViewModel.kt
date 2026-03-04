@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.switchMap
-import com.jgcb.rickandmorty.data.model.Character
+import com.jgcb.rickandmorty.domain.model.Character
 import com.jgcb.rickandmorty.domain.usecase.GetCharacterForIdUseCase
 import com.jgcb.rickandmorty.utils.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel

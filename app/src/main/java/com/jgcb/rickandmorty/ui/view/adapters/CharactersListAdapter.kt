@@ -5,7 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.jgcb.rickandmorty.data.model.Character
+import com.jgcb.rickandmorty.domain.model.Character
 import com.jgcb.rickandmorty.databinding.ItemCharacterListBinding
 
 /**
