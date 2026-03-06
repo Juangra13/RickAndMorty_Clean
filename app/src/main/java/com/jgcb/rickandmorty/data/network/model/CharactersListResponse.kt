@@ -1,8 +1,7 @@
 package com.jgcb.rickandmorty.data.network.model
 
-import com.google.gson.annotations.SerializedName
 import com.jgcb.rickandmorty.data.local.entity.CharactersListEntity
-import com.jgcb.rickandmorty.domain.model.Character
+import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 /**
@@ -11,9 +10,9 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class CharactersListResponse(
-        @SerializedName("info")
+        @SerialName("info")
         val infoResponse: InfoResponse,
-        @SerializedName("results")
+        @SerialName("results")
         val characters: List<CharacterResponse>
 )
 

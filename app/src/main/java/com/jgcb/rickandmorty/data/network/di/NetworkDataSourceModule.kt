@@ -1,6 +1,7 @@
 package com.jgcb.rickandmorty.data.network.di
 
 import com.jgcb.rickandmorty.data.network.repository.NetworkDataSource
+import com.jgcb.rickandmorty.data.network.repository.NetworkDataSourceImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

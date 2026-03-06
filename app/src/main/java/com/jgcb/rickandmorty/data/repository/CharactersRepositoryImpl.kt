@@ -3,11 +3,13 @@ package com.jgcb.rickandmorty.data.repository
 import com.jgcb.rickandmorty.data.local.entity.CharactersListEntity
 import com.jgcb.rickandmorty.data.local.entity.asExternalModel
 import com.jgcb.rickandmorty.data.local.repository.DatabaseLocalResource
+import com.jgcb.rickandmorty.data.local.utils.EmptyCacheException
 import com.jgcb.rickandmorty.data.network.model.CharactersListResponse
 import com.jgcb.rickandmorty.data.network.model.asEntity
 import com.jgcb.rickandmorty.data.network.repository.NetworkDataSource
 import com.jgcb.rickandmorty.domain.model.Character
 import com.jgcb.rickandmorty.domain.repository.CharactersRepository
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.retryWhen
@@ -15,7 +17,7 @@ import kotlinx.coroutines.flow.take
 import javax.inject.Inject
 
 /**
- * Created by @Juan Gabriel Corrales on 21/07/2023.
+ * Modified by @Juan Gabriel Corrales on 05/03/2026.
  */
 
 class CharactersRepositoryImpl @Inject constructor(
@@ -27,10 +29,14 @@ class CharactersRepositoryImpl @Inject constructor(
         return databaseLocalResource
             .getAllCharacters()
             .map { characterEntities ->
+                if (characterEntities.isEmpty()) {
+                    throw EmptyCacheException()
+                }
+                delay(1000)
                 characterEntities.map { it.asExternalModel() }
             }
             .retryWhen { cause, attempt ->
-                if (cause is NullPointerException && attempt < 1) {
+                if (cause is EmptyCacheException && attempt < 1) {
                     fetchCharacters()
                     true
                 } else {

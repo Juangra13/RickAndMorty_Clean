@@ -6,12 +6,12 @@ import androidx.room.PrimaryKey
 import com.jgcb.rickandmorty.domain.model.Character
 
 @Entity(
-    tableName = "character"
+    tableName = "characters_entity"
 )
 data class CharacterEntity(
+        @PrimaryKey @ColumnInfo(name = "id") val id: Int,
         @ColumnInfo(name = "created") val created: String,
         @ColumnInfo(name = "gender")val gender: String,
-        @PrimaryKey @ColumnInfo(name = "id") val id: Int,
         @ColumnInfo(name = "image") val image: String,
         @ColumnInfo(name = "name") val name: String,
         @ColumnInfo(name = "species") val species: String,

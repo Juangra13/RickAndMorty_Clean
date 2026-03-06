@@ -2,6 +2,8 @@ package com.jgcb.rickandmorty.data.network.di
 
 import com.jgcb.rickandmorty.data.network.api.CharactersApi
 import com.jgcb.rickandmorty.utils.ContentConstants
+import com.jgcb.rickandmorty.BuildConfig
+import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -41,6 +43,7 @@ object NetworkModule {
     ): CharactersApi {
         val json = Json {
             ignoreUnknownKeys = true
+            coerceInputValues = true
         }
         val contentType = "application/json".toMediaType()
 
