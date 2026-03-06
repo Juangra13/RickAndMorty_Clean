@@ -1,7 +1,7 @@
 package com.jgcb.rickandmorty.utils
 
 /**
- * Created by @Juan Gabriel Corrales on 21/07/2023.
+ * Modified by @Juan Gabriel Corrales on 05/03/2026
  */
 
 object ContentConstants {
