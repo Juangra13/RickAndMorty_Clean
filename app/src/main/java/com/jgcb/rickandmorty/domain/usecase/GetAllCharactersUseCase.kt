@@ -16,4 +16,12 @@ class GetAllCharactersUseCase @Inject constructor(
             .map { Result.success(it) }
             .catch { emit(Result.failure(it)) }
     }
+
+    suspend fun loadMore(): Result<Unit> {
+        return repository.loadMoreCharacters()
+    }
+
+    suspend fun refresh(): Result<Unit> {
+        return repository.refreshCharacters()
+    }
 }

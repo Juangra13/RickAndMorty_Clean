@@ -12,7 +12,7 @@ data class InfoResponse(
         val count: Int,
         val next: String,
         val pages: Int,
-        val prev: Int?
+        val prev: String?
 )
 
 fun InfoResponse.asEntity() = InfoEntity(

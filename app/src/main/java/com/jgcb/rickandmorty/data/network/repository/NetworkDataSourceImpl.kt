@@ -12,9 +12,9 @@ class NetworkDataSourceImpl @Inject constructor(
     private val api: CharactersApi,
     @IoDispatcher private val dispatcher: CoroutineDispatcher
 ): NetworkDataSource {
-    override suspend fun fetchNetworkCharacters(): CharactersListResponse {
+    override suspend fun fetchNetworkCharacters(page: Int): CharactersListResponse {
         return withContext(dispatcher) {
-            api.getAllCharacters()
+            api.getAllCharacters(page)
         }
     }
 
